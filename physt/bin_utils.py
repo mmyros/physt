@@ -26,14 +26,14 @@ def make_bin_array(bins) -> np.ndarray:
         # if bins.shape[0] == 0:
         #     raise RuntimeError("Needs at least one bin")
         return np.hstack((bins[:-1, np.newaxis], bins[1:, np.newaxis]))
-    elif bins.ndim == 2:
+    else:#elif bins.ndim == 2:
         if bins.shape[1] != 2:
             raise RuntimeError("Binning schema with ndim==2 must have 2 columns")
         # if bins.shape[0] == 0:
         #     raise RuntimeError("Needs at least one bin")
         return bins  # Already correct, just pass
-    else:
-        raise RuntimeError("Binning schema must have ndim==1 or ndim==2")
+    # else:
+    #     raise RuntimeError("Binning schema must have ndim==1 or ndim==2")
 
 
 def to_numpy_bins(bins) -> np.ndarray:
