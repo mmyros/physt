@@ -849,10 +849,7 @@ def calculate_bins_nd(array, bins=None, *args, **kwargs):
         elif len(range_) != dim:
             raise RuntimeError("Wrong dimensionality of range")
     for i in range(len(args)):
-            if len(args[i]) != dim:
-                raise RuntimeError("Argument not understood.")
-        else:
-            args[i] = dim * [args[i]]
+        args[i] = dim * [args[i]]
     for key in list(kwargs.keys()):
             kwargs[key] = dim * [kwargs[key]]
 
